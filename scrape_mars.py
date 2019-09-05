@@ -92,21 +92,10 @@ def scrape_hemispheres():
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
     results=soup.find_all("h3")
-    #results:
-    #[<h3>Cerberus Hemisphere Enhanced</h3>,
-     #<h3>Schiaparelli Hemisphere Enhanced</h3>,
-     #<h3>Syrtis Major Hemisphere Enhanced</h3>,
-     #<h3>Valles Marineris Hemisphere Enhanced</h3>]
-    
     hemisphere_image_urls=[]
-    
-    #Get the link of the image in each name
+        #Get the link of the image in each name
     for result in results:
         title=result.text
-        
-        #name =text_str.split(' Hemisphere ')[0].lower().replace(" ","_")
-        #enhanced =text_str.split(' Hemisphere ')[1].lower()
-        #link_name = name+"_"+ enhanced
         
         #Click the according links to get the image's link
         url="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
